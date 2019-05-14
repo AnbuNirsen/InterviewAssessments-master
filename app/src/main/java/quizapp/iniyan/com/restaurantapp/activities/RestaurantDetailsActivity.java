@@ -102,8 +102,10 @@ private String name;
     @Override
     public void onRestaurantLoaded(Restaurant_ restaurant_) {
         if(restaurant_!=null){
-//            if(!TextUtils.isEmpty(restaurant_.getThumb()))
-                //load image from internet
+            if(!TextUtils.isEmpty(restaurant_.getThumb())){
+             //load image from internet
+             Picasso.with(context).load(restaurant_.getThumb()).into(header)   
+            }
             if(!TextUtils.isEmpty(restaurant_.getName()))
                 tv_restaurant_name.setText(restaurant_.getName());
             if(restaurant_.getUserRating().getAggregateRating() != 0.0)
