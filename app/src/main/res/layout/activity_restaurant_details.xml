@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginStart="4dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+            <ImageView
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/restaurant"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/divbig">
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:background="@drawable/divbig"
+                    android:textStyle="bold"
+                    android:id="@+id/tv_restaurant_name"
+                    android:drawableLeft="@drawable/ic_hotels"
+                    android:textColor="@color/restaurant_details_texts"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="3.7 / 5.0"
+                    android:id="@+id/tv_rating"
+                    android:padding="4dp"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/tv_rating_background"/>
+            </LinearLayout>
+
+
+
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/anim_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/scrollableview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <android.support.v7.widget.CardView
+            android:layout_marginTop="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardElevation="2dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:textStyle="bold"
+                    android:id="@+id/tv_address"/>
+                <TextView
+                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_4dp"
+            android:padding="@dimen/dimen_4dp">
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="Bangalore"
+                    android:layout_margin="@dimen/dimen_4dp"
+                    android:drawableLeft="@drawable/ic_hotel"
+                    android:drawablePadding="@dimen/dimen_8dp"
+                    android:id="@+id/tv_city"
+                    android:textStyle="bold"
+                    android:textColor="@color/restaurant_details_texts" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/tv_city"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="Cuisens"
+                    android:layout_marginTop="@dimen/dimen_8dp"
+                    android:drawableLeft="@drawable/ic_cuisens"
+                    android:drawablePadding="@dimen/dimen_8dp"
+                    android:id="@+id/tv_cuisens"
+                    android:textStyle="bold"
+                    android:textColor="@color/restaurant_details_texts"
+                    android:textSize="@dimen/diemen_16sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/tv_cuisens"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="- Cuisens"
+                    android:layout_margin="@dimen/dimen_8dp"
+                    android:drawablePadding="@dimen/dimen_8dp"
+                    android:id="@+id/tv_cuisens_texts"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/tv_cuisens_texts"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="Avg Cost for Two : "
+                    android:layout_margin="@dimen/dimen_4dp"
+                    android:drawablePadding="@dimen/dimen_8dp"
+                    android:textStyle="bold"
+                    android:id="@+id/tv_avg_cost_title"
+                    android:textColor="@color/restaurant_details_texts"
+                    android:textSize="@dimen/diemen_16sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/tv_cuisens_texts"
+                    app:layout_constraintStart_toEndOf="@id/tv_avg_cost_title"
+                    android:text="250"
+                    android:layout_margin="@dimen/dimen_4dp"
+                    android:drawablePadding="@dimen/dimen_8dp"
+                    android:textStyle="bold"
+                    android:id="@+id/tv_avg_cost"
+                    android:textColor="@color/rating_color"
+                    android:textSize="@dimen/diemen_16sp"/>
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:clickable="true"
+        android:id="@+id/fab_locate_me"
+        android:src="@drawable/ic_maps_and_flags"
+        app:backgroundTint="@color/restaurant_details_texts"
+        app:fabSize="normal"
+        app:layout_anchor="@+id/appbar"
+        app:layout_anchorGravity="bottom|right|end"/>
+
+</android.support.design.widget.CoordinatorLayout>
